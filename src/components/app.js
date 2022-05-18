@@ -5,7 +5,7 @@ export default class App extends Component {
   render() {
     return (
       <div className='app'>
-        <h1>Derek Kendrick II Portfolio</h1>
+        <h1>Derek Kendrick II React Portfolio</h1>
         <div>{moment().format("MMMM Do YYYY, h:mm:ss")}</div>
        
       </div>
