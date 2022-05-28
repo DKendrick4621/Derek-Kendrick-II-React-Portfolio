@@ -10,10 +10,10 @@ export default class App extends Component {
             pageTitle: "Welcome to my portfolio",
             isLoading: false,
             data: [
-            { title: "Quip", category: "eCommerce" },
-            { title: "Eventbrite", category: "Scheduling" },
-            { title: "Ministry Safe", category: "Enterprise" },
-            { title: "SwingAway", category: "eCommerce" }
+            { title: "Quip", category: "eCommerce", slug: "quip" },
+            { title: "Eventbrite", category: "Scheduling", slug:"eventbrite" },
+            { title: "Ministry Safe", category: "Enterprise", slug:"ministry-safe" },
+            { title: "SwingAway", category: "eCommerce", slug: "swingAway" }
             ]
         };
         this.handleFilter = this.handleFilter.bind(this);
@@ -31,7 +31,7 @@ export default class App extends Component {
     
     PortfolioItems() {
         return this.state.data.map(item => {
-            return <PortfolioItem title={item.title} url={"google.com"} />;
+            return <PortfolioItem title={item.title} url={"google.com"} slug={item.slug}/>;
         })
     }
 
@@ -49,14 +49,14 @@ export default class App extends Component {
                  <h2>{this.state.pageTitle}</h2>
 
                  <button onClick={() => this.handleFilter("eCommerce")}>
-          eCommerce
-        </button>
-        <button onClick={() => this.handleFilter("Scheduling")}>
-          Scheduling
-        </button>
-        <button onClick={() => this.handleFilter("Enterprise")}>
-          Enterprise
-        </button>
+                    eCommerce
+                    </button>
+                    <button onClick={() => this.handleFilter("Scheduling")}>
+                    Scheduling
+                    </button>
+                    <button onClick={() => this.handleFilter("Enterprise")}>
+                    Enterprise
+                    </button>
 
                  {this.PortfolioItems()}
             </div>
